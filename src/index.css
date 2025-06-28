@@ -1,0 +1,39 @@
+@import "tailwindcss";
+:root {
+  font-family: 'Fahkwang', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply text-3xl;
+}
+
+::selection {
+  @apply bg-zinc-200 text-zinc-950;
+}
+
+[data-swipe] li {
+  @apply relative cursor-pointer;
+  &::before {
+    @apply content-[''] absolute -bottom-1 left-0 block w-0 h-0.5 bg-zinc-900 transition-all;
+  }
+  
+}
+
+* {
+  user-select: none;
+}
+
+[data-swipe] li:hover::before {
+    @apply w-full;
+}
+
+* {
+  scroll-behavior: smooth;
+}
